@@ -6,6 +6,7 @@ import epam.springboottask.service.TaskService;
 import jakarta.validation.Valid;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -28,7 +29,7 @@ public class TaskController {
     public ResponseEntity<TaskResponse> create(
             @Valid @RequestBody TaskRequest request, Authentication authentication) {
         TaskResponse created = taskService.create(request, authentication.getName());
-        return ResponseEntity.ok(created);
+        return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
 
     @GetMapping

@@ -7,4 +7,4 @@ spring:
 
 security:
   jwt:
-    secret-base64: ${JWT_SECRET_BASE64}
+    secret-base64: ${JWT_SECRET_TOKEN}

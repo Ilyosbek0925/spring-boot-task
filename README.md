@@ -122,7 +122,7 @@ UPDATE app_users SET role = 'ADMIN' WHERE username = 'alice';
 `application-local.yml` is the default profile and uses H2. Activate `dev`,
 `stg`, or `prod` with `--spring.profiles.active=<profile>`; those profiles use
 PostgreSQL and require `DB_URL`, `DB_USERNAME`, `DB_PASSWORD`, and
-`JWT_SECRET_BASE64` environment variables. The JWT key must be Base64-encoded
+`JWT_SECRET_TOKEN` environment variables. The JWT key must be Base64-encoded
 and contain at least 256 bits. Replace the local development key before
 deploying.
 
